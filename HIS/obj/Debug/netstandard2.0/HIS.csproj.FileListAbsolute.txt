@@ -1,0 +1,13 @@
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\bin\Debug\netstandard2.0\HIS.deps.json
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\bin\Debug\netstandard2.0\HIS.dll
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\bin\Debug\netstandard2.0\HIS.pdb
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\HIS.csproj.CoreCompileInputs.cache
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\HIS.AssemblyInfoInputs.cache
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\HIS.AssemblyInfo.cs
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\HIS.dll
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\HIS.pdb
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\Page1.xaml.g.cs
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\Page2.xaml.g.cs
+C:\Users\Shíofra\Source\Repos\Homecare-Medical-Information-System\HIS\HIS\HIS\obj\Debug\netstandard2.0\Page3.xaml.g.cs

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HIS.Home"
+             Title="Home"
+             >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Button Text="Food" Clicked="Button_Clicked"></Button>
+            <Button Text="Personal Care" Clicked="Button_Clicked_1"></Button>
+            <Button Text="Medicine" Clicked="Button_Clicked_2"></Button>
+            <Button Text="Exercise" Clicked="Button_Clicked_3"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

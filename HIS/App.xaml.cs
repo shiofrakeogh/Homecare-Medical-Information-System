@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.WindowsAzure.MobileServices;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HIS
@@ -11,7 +12,7 @@ namespace HIS
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Page1());
+            MainPage = new NavigationPage(new Home());
         }
 
         protected override void OnStart()
@@ -28,5 +29,7 @@ namespace HIS
         {
             // Handle when your app resumes
         }
+
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://hmis.azurewebsites.net");
     }
 }

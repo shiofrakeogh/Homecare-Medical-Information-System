@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HMIS.StartPage"
+             >
+    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+        <Button Text="Log In" Clicked="Button_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
+        <Button Text="Register" Clicked="Button_Clicked_1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
+
+    </StackLayout>
+
+</ContentPage>

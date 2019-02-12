@@ -101,6 +101,24 @@ namespace HMIS
             }
             return null;
         }*/
+
+        public async Task<IEnumerable<Food>> GetFoodItemsAsync(bool syncItems = false)
+        {
+            try
+            {
+                return await foodTable.ReadAsync();
+            }
+            catch (MobileServiceInvalidOperationException msioe)
+            {
+                Debug.WriteLine(@"INVALID {0}", msioe.Message);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(@"ERROR {0}", e.Message);
+            }
+            return null;
+        }
+
         public async Task DeleteTaskAsync(Food item)
         {
             try

@@ -5,7 +5,9 @@
              Title="Home"
              >
     <ContentPage.Content>
+        
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Button Text="Clock In" Clicked="Button_Clicked_4"></Button>
             <Button Text="Food" Clicked="Button_Clicked"></Button>
             <Button Text="Personal Care" Clicked="Button_Clicked_1"></Button>
             <Button Text="Medicine" Clicked="Button_Clicked_2"></Button>

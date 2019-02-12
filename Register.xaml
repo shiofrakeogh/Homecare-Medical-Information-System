@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HMIS.Register">
+    <AbsoluteLayout Padding="20"  VerticalOptions="CenterAndExpand">
+        <Entry  AbsoluteLayout.LayoutBounds="0,40,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Name" HorizontalOptions="FillAndExpand"/>
+        <Entry AbsoluteLayout.LayoutBounds="0,85,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Password"  HorizontalOptions="FillAndExpand"/>
+        <Entry  AbsoluteLayout.LayoutBounds="1,130,0.5,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Phone"  HorizontalOptions="FillAndExpand"/>
+        <Picker x:Name="picker" Title="Type of Carer">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Nurse</x:String>
+                    <x:String>Family/Friend</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button  AbsoluteLayout.LayoutBounds="0,180,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"  HorizontalOptions="FillAndExpand" Text="Register" Clicked="Button_Clicked" TextColor="White" BackgroundColor="CadetBlue"/>
+    </AbsoluteLayout>
+</ContentPage>

@@ -11,7 +11,7 @@ namespace HMIS
         string lunch;
         string dinner;
         string snacks;
-
+       
         [JsonProperty(PropertyName = "foodID")]
         public string foodid
         {
@@ -46,7 +46,6 @@ namespace HMIS
             get { return snacks; }
             set { snacks = value; }
         }
-
 
         [Version]
         public string Version { get; set; }

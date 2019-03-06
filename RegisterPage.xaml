@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HMIS.Views.RegisterPage">
+    <AbsoluteLayout Padding="20"  VerticalOptions="CenterAndExpand">
+        <Entry  AbsoluteLayout.LayoutBounds="0,40,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Name" HorizontalOptions="FillAndExpand" Text="{Binding Name}"/>
+        <Entry AbsoluteLayout.LayoutBounds="0,85,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" Text="{Binding Password}"/>
+        <Entry  AbsoluteLayout.LayoutBounds="0,130,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Phone"  HorizontalOptions="FillAndExpand" Text="{Binding PhoneNumber}"/>
+        <Picker x:Name="picker" Title="Type of Carer" SelectedItem="{Binding Role}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Nurse</x:String>
+                    <x:String>Family/Friend</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button  AbsoluteLayout.LayoutBounds="0,180,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"  HorizontalOptions="FillAndExpand" Text="Register" Clicked="Button_Clicked" Command="{Binding Path= RegisterCommand}" TextColor="White" BackgroundColor="CadetBlue" />
+    </AbsoluteLayout>
+</ContentPage>

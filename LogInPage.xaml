@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HMIS.Views.LogInPage">
+    <AbsoluteLayout Padding="20"  VerticalOptions="CenterAndExpand">
+        <Entry  AbsoluteLayout.LayoutBounds="0,40,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="UserName" HorizontalOptions="FillAndExpand"/>
+        <Entry AbsoluteLayout.LayoutBounds="0,85,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Password"  HorizontalOptions="FillAndExpand"/>
+        <Entry  AbsoluteLayout.LayoutBounds="1,130,0.5,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Phone"  HorizontalOptions="FillAndExpand"/>
+        <Button  AbsoluteLayout.LayoutBounds="0,180,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"  HorizontalOptions="FillAndExpand" Text="Log In" Clicked="Button_Clicked" TextColor="White" BackgroundColor="CadetBlue"/>
+    </AbsoluteLayout>
+</ContentPage>

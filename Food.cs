@@ -1,50 +1,27 @@
 ﻿using System;
+using System.ComponentModel;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 
-namespace HMIS
+namespace HMIS.Models
 {
-    public class Food
+    public class Food : INotifyPropertyChanged
     {
-        string foodID;
-        string breakfast;
-        string lunch;
-        string dinner;
-        string snacks;
-       
-        [JsonProperty(PropertyName = "foodID")]
-        public string foodid
+        string fooditem;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
         {
-            get { return foodID; }
-            set { foodID = value; }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        [JsonProperty(PropertyName = "breakfast")]
-        public string breakFast
+        public string FoodItem
         {
-            get { return breakfast; }
-            set { breakfast = value; }
-        }
-
-        [JsonProperty(PropertyName = "lunch")]
-        public string lunch1
-        {
-            get { return lunch; }
-            set { lunch = value; }
-        }
-
-        [JsonProperty(PropertyName = "dinner")]
-        public string dinner1
-        {
-            get { return dinner; }
-            set { dinner = value; }
-        }
-
-        [JsonProperty(PropertyName = "snacks")]
-        public string snacks1
-        {
-            get { return snacks; }
-            set { snacks = value; }
+            get { return fooditem; }
+            set {
+                fooditem = value;
+                OnPropertyChanged("fooditem");
+            }
         }
 
         [Version]

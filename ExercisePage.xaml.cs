@@ -1,28 +1,27 @@
 ﻿using HMIS.ViewModels;
 using System;
-using System.Data;
-using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace HMIS.Views
 {
-    public partial class FoodPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ExercisePage : ContentPage
     {
-
-        public FoodPage()
+        public ExercisePage()
         {
             InitializeComponent();
-            this.BindingContext = new FoodViewModel();
+            this.BindingContext = new ExerciseViewModel();
         }
-
 
         private void Button_Clicked(object sender, EventArgs e)
         {
             newItemName.Text = string.Empty;
-            
         }
-        
     }
-
 }

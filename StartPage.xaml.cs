@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMIS.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,12 @@ namespace HMIS
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LogIn());
+            Navigation.PushAsync(new LogInPage());
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Register());
+            Navigation.PushAsync(new RegisterPage());
         }
     }
 }

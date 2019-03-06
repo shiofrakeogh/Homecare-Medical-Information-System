@@ -11,24 +11,21 @@ namespace HMIS
 	public class App : Application
 	{
         
-                //conn.ConnectionString = "Server=hmisserver.database.windows.net;Database=hmisDB;Trusted_Connection=true;User ID=shiofrakeogh;Password=Applepie112;";
                 
             
 public App()
         {
             // The root page of your application
             MainPage = new NavigationPage(new StartPage());
-        
-            
-}
+            //SqlConnection connection = new SqlConnection("Data Source = hmisserver.database.windows.net; Initial Catalog = hmisDB; Persist Security Info = True; User ID = shiofrakeogh; Password = ***********");
+
+        }
 
 		protected override void OnStart ()
 		{
         // Handle when your app starts
-        SqlConnection conn = new SqlConnection("Server = tcp:hmisserver.database.windows.net,1433; Initial Catalog = hmisDB; Persist Security Info = False; User ID = shiofrakeogh; Password =Applepie112; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-        conn.Open();
-       
-    }
+        
+        }
 
 		protected override void OnSleep ()
 		{

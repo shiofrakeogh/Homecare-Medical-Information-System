@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMIS.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace HMIS
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new TodoList());
+            Navigation.PushAsync(new Test());
         }
 
         private void Button_Clicked_2(object sender, EventArgs e)
@@ -34,12 +35,13 @@ namespace HMIS
 
         private void Button_Clicked_3(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Exercise());
+            Navigation.PushAsync(new ExercisePage());
         }
 
         private void Button_Clicked_4(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TodoList());
         }
+
     }
 }

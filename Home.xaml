@@ -4,14 +4,23 @@
              x:Class="HMIS.Home"
              Title="Home"
              >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add" Order="Primary" Text="Add Event" Priority="0" Clicked="Add_Clicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Button Text="Clock In" Clicked="Button_Clicked_4"></Button>
-            <Button Text="Food" Clicked="Button_Clicked"></Button>
-            <Button Text="Personal Care" Clicked="Button_Clicked_1"></Button>
-            <Button Text="Medicine" Clicked="Button_Clicked_2"></Button>
-            <Button Text="Exercise" Clicked="Button_Clicked_3"></Button>
+
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" WidthRequest="350">
+            <FlexLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand" Direction="Column" AlignContent="SpaceEvenly">
+                <Button Text="Clock In" Clicked="Button_Clicked_4" HorizontalOptions="Center" VerticalOptions="StartAndExpand" BackgroundColor="White" TextColor="#87CEFA"></Button>
+                
+            </FlexLayout>
+            
+                   
+            <Button Text="Food" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Command="{Binding Path= GetFoodCommand}" BackgroundColor="#87CEFA" TextColor="White"></Button>
+            <Button Text="Personal Care" Clicked="Button_Clicked_1" HorizontalOptions="FillAndExpand" BackgroundColor="#87CEFA" TextColor="White"></Button>
+            <Button Text="Medicine" Clicked="Button_Clicked_2" HorizontalOptions="FillAndExpand" Command="{Binding Path= GetMedicationCommand}" BackgroundColor="#87CEFA" TextColor="White"></Button>
+            <Button Text="Exercise" Clicked="Button_Clicked_3" HorizontalOptions="FillAndExpand" Command="{Binding Path= GetExerciseCommand}" BackgroundColor="#87CEFA" TextColor="White"></Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="HMIS.Views.MedicinePage"
+             Title="Medicine">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" Padding="10,30,10,5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout>
+                <Entry x:Name="newMedName" Placeholder="Medicine Name" Text="{Binding MedName}"/>
+                <Entry x:Name="newDosage" Placeholder="Dosage" Text="{Binding Dosage}"/>
+                <DatePicker MinimumDate="{x:Static system:DateTime.Today}" Date="{Binding RefillDate}"></DatePicker>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Start">
+                    <Button Text="+" MinimumHeightRequest="30" Clicked="Button_Clicked"  Command="{Binding Path= AddMedicationCommand}"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <ListView ItemsSource="{Binding Medication}" Grid.Row="1" RowHeight="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+                            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                <Label Text="{Binding MedName}"  />
+                                <Label Text="{Binding Dosage}"  />
+                                <Label Text="Refill Date:"  />
+                                <Label Text="{Binding RefillDate}"  />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

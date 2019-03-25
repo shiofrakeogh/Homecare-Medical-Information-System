@@ -5,9 +5,9 @@ using System.Text;
 
 namespace HMIS.Models
 {
-    class Exercise : INotifyPropertyChanged
+    public class Exercise : INotifyPropertyChanged
     {
-        string id;
+        //string id;
         string exercise_type;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -16,7 +16,7 @@ namespace HMIS.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public string Id
+        /*public string Id
         {
             get { return id; }
             set
@@ -25,7 +25,7 @@ namespace HMIS.Models
                 OnPropertyChanged("id");
             }
 
-        }
+        }*/
 
         public string ExerciseType
         {

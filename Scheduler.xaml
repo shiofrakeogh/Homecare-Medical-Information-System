@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             xmlns:local="clr-namespace:HMIS.ViewModels"
+             x:Class="HMIS.Views.Scheduler">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add" Order="Primary" Text="Add" Priority="0" Clicked="Add_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <syncfusion:SfSchedule x:Name="schedule">
+            <syncfusion:SfSchedule.AppointmentMapping>
+                <syncfusion:ScheduleAppointmentMapping
+                    EndTimeMapping="EndDateAndTime"
+                    StartTimeMapping="EventDate"
+                    SubjectMapping="EventName">
+                </syncfusion:ScheduleAppointmentMapping>
+            </syncfusion:SfSchedule.AppointmentMapping>
+            <syncfusion:SfSchedule.BindingContext>
+                <local:AppointmentViewModel />
+            </syncfusion:SfSchedule.BindingContext>
+        </syncfusion:SfSchedule>
+    </ContentPage.Content>
+</ContentPage>

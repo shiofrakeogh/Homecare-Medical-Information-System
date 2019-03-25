@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HMIS.Views.LogInPage">
     <AbsoluteLayout Padding="20"  VerticalOptions="CenterAndExpand">
-        <Entry  AbsoluteLayout.LayoutBounds="0,40,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="UserName" HorizontalOptions="FillAndExpand"/>
-        <Entry AbsoluteLayout.LayoutBounds="0,85,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Password"  HorizontalOptions="FillAndExpand"/>
-        <Entry  AbsoluteLayout.LayoutBounds="1,130,0.5,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Placeholder="Phone"  HorizontalOptions="FillAndExpand"/>
-        <Button  AbsoluteLayout.LayoutBounds="0,180,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"  HorizontalOptions="FillAndExpand" Text="Log In" Clicked="Button_Clicked" TextColor="White" BackgroundColor="CadetBlue"/>
+        <Entry  x:Name="newName" AbsoluteLayout.LayoutBounds="0,40,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Text="{Binding Name}" Placeholder="Name" HorizontalOptions="FillAndExpand"/>
+        <Entry x:Name="newPassword" AbsoluteLayout.LayoutBounds="0,85,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" Text="{Binding Password}" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand"/>
+        <Button  AbsoluteLayout.LayoutBounds="0,180,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"  HorizontalOptions="FillAndExpand" Text="Log In" Command="{Binding Path= LogInCommand}" Clicked="Button_Clicked" TextColor="White" BackgroundColor="#87CEFA"/>
     </AbsoluteLayout>
 </ContentPage>

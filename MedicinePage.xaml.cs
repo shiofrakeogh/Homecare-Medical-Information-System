@@ -13,24 +13,24 @@ using Xamarin.Forms.Xaml;
 namespace HMIS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ExercisePage : ContentPage
+    public partial class MedicinePage : ContentPage
     {
         public User user { get; set; }
         public Patient patient { get; set; }
-        public ObservableCollection<Exercise> ExerciseItems { get; set; }
-
-        public ExercisePage(User user1, Patient patient1, ObservableCollection<Exercise> Exerciseitems1)
+        public ObservableCollection<Medicine> Medication { get; set; }
+        public MedicinePage(User user1, Patient patient1, ObservableCollection<Medicine> Medication1)
         {
             user = user1;
             patient = patient1;
-            ExerciseItems = Exerciseitems1;
+            Medication = Medication1;
             InitializeComponent();
-            this.BindingContext = new ExerciseViewModel(user, patient, ExerciseItems);
+            this.BindingContext = new MedicineViewModel(user, patient, Medication);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            newItemName.Text = string.Empty;
+            newMedName.Text = string.Empty;
+            newDosage.Text = string.Empty;
         }
     }
 }

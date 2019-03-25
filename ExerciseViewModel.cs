@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HMIS.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Text;
@@ -9,16 +11,21 @@ namespace HMIS.ViewModels
 {
     public class ExerciseViewModel : INotifyPropertyChanged
     {
+        public User user { get; set; }
+        public Patient patient { get; set; }
         private string _exercisetype;
+        public ObservableCollection<Exercise> ExerciseItems { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public ExerciseViewModel()
+        public ExerciseViewModel(User user1, Patient patient1, ObservableCollection<Exercise> ExerciseItems1)
         {
-
+            user = user1;
+            patient = patient1;
+            ExerciseItems = ExerciseItems1;
             SaveCommand = new DelegateCommand(Save, () => CanSave);
 
         }
@@ -45,10 +52,12 @@ namespace HMIS.ViewModels
 
         public void Save()
         {
+            string patientName = patient.Name;
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "INSERT INTO Exercise(exercise_type)VALUES(@ExerciseType)";
+            cmd.CommandText = "INSERT INTO Exercise(exercise_type, patientName)VALUES(@ExerciseType, @patientName)";
             cmd.Parameters.AddWithValue("@ExerciseType", ExerciseType);
+            cmd.Parameters.AddWithValue("@patientName", patientName);
 
             try
             {
@@ -63,6 +72,9 @@ namespace HMIS.ViewModels
             {
                 con.Close();
             }
+            Exercise exercise = new Exercise();
+            exercise.ExerciseType = ExerciseType;
+            ExerciseItems.Add(exercise);
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HMIS.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Text;
@@ -7,23 +9,27 @@ using System.Windows.Input;
 
 namespace HMIS.ViewModels
 {
-    public class RegisterViewModel : INotifyPropertyChanged
+    class SelectPatientViewModel : INotifyPropertyChanged
     {
         private string _name;
         private int _phoneNum;
         private string _gender;
         private string _address;
         private int _age;
+        User user { get; set; }
+        public ObservableCollection<string> Patients { get; set; }
+        Patient patient = new Patient();
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public RegisterViewModel()
+        public SelectPatientViewModel(User user1)
         {
-
-            RegisterCommand = new DelegateCommand(Register, () => CanRegister);
+            user = user1;
+            this.Patients = new ObservableCollection<string>();
+            SelectCommand = new DelegateCommand(Select, () => CanSelect);
 
         }
 
@@ -77,42 +83,36 @@ namespace HMIS.ViewModels
             }
         }
 
-        public ICommand RegisterCommand { get; private set; }
 
-        public bool CanRegister
+        public ICommand SelectCommand { get; private set; }
+
+        public bool CanSelect
         {
-            get { return string.IsNullOrEmpty(Name); }
+            get { return true; }
 
         }
 
         string connectionString = "Data Source = hmisserver.database.windows.net; Initial Catalog = hmisDB; Persist Security Info = True; User ID = shiofrakeogh; Password = Applepie112";
 
 
-        public void Register()
+        public void Select()
         {
+            string user_name = user.Name;
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandTimeout = 0;
-            cmd.CommandText = "INSERT INTO patient(name,phone,gender,address,age)VALUES(@Name,@PhoneNumber,@Gender,@Address,@Age)";
-            cmd.Parameters.AddWithValue("@Name", Name);
-            cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-            cmd.Parameters.AddWithValue("@Gender", Gender);
-            cmd.Parameters.AddWithValue("@Address", Address);
-            cmd.Parameters.AddWithValue("@Age", Age);
+            cmd.CommandText = "SELECT patient_Name FROM Patient_User WHERE user_Name=@user_name";
+            cmd.Parameters.AddWithValue("@user_name", user_name);
+            con.Open();
+            using (SqlDataReader oReader = cmd.ExecuteReader())
+            {
+                while (oReader.Read())
+                {
+                    patient.Name = oReader["patient_Name"].ToString();
+                    Patients.Add(patient.Name);
+                }
 
-            try
-            {
-                con.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            finally
-            {
                 con.Close();
-
             }
         }
     }

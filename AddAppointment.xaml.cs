@@ -11,18 +11,19 @@ using Xamarin.Forms.Xaml;
 namespace HMIS.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LogInPage : ContentPage
+	public partial class AddAppointment : ContentPage
 	{
-		public LogInPage ()
+		public AddAppointment ()
 		{
 			InitializeComponent ();
-            this.BindingContext = new LogInViewModel();
+            this.BindingContext = new AppointmentViewModel();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            newName.Text = string.Empty;
-            newPassword.Text = string.Empty;
+            //schedule.VisibleDatesChangedEvent += Schedule_VisibleDatesChangedEvent;
+            Navigation.PushAsync(new Scheduler());
+            //Navigation.PopAsync(true);
         }
     }
 }

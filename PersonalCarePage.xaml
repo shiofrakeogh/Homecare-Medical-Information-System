@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HMIS.Views.PersonalCarePage"
+             Title="Personal Care">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+        <Label Text="Mood Tracker" TextColor="#87CEFA"></Label>
+            <Picker x:Name="picker" Title="Mood" SelectedItem="{Binding Mood}" HorizontalOptions="FillAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Good</x:String>
+                        <x:String>Fine</x:String>
+                        <x:String>Bad</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <controls:CheckBox DefaultText="Bathing" HorizontalOptions="FillAndExpand"/>
+            <controls:CheckBox DefaultText="Memory Care" HorizontalOptions="FillAndExpand"/>
+            <controls:CheckBox DefaultText="Outing" HorizontalOptions="FillAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

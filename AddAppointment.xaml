@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="HMIS.Views.AddAppointment"
+             Title="Add Appointment">
+    <ContentPage.Content>
+        <StackLayout Padding="20"  VerticalOptions="CenterAndExpand">
+            <Entry Placeholder="Event Name" HorizontalOptions="FillAndExpand" Text="{Binding EventName}"/>
+            <Entry Placeholder="Event Organiser" HorizontalOptions="FillAndExpand" Text="{Binding EventOrganiser}"/>
+            <Label Text="Select Date of Event"></Label>
+            <DatePicker MinimumDate="{x:Static system:DateTime.Today}" Date="{Binding EventDate}"></DatePicker>
+            <Label Text="Select Start Time of Event"></Label>
+            <TimePicker Time="{Binding BeginTime}"></TimePicker>
+            <Label Text="Select End Time of Event"></Label>
+            <TimePicker Time="{Binding EndTime}"></TimePicker>
+            <Button HorizontalOptions="FillAndExpand" Text="Add Event" TextColor="White" Command="{Binding Path=AddAppointmentsCommand}" Clicked="Button_Clicked" BackgroundColor="#75DAFF" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

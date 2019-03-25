@@ -13,10 +13,14 @@
       <None Remove="hmisDBDataSet.xsd" />
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="Syncfusion.Licensing" Version="16.4.0.52" />
+        <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="16.4.0.52" />
+        <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="16.4.0.52" />
         <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
         <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
         <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.1.1" />
         <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.1.1" />
+        <PackageReference Include="XLabs.Forms" Version="2.0.5782" />
     </ItemGroup>
     <ItemGroup>
       <Compile Update="FoodPage.xaml.cs">
@@ -29,6 +33,12 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\MedicinePage.xaml.cs">
+        <DependentUpon>MedicinePage.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Views\PersonalCarePage.xaml.cs">
+        <DependentUpon>PersonalCarePage.xaml</DependentUpon>
       </Compile>
       <Compile Update="Views\RegisterPage.xaml.cs">
         <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -44,13 +54,16 @@
         <EmbeddedResource Update="Home.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
+        <EmbeddedResource Update="Views\AddAppointment.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
         <EmbeddedResource Update="Views\LogInPage.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="Medicine.xaml">
+        <EmbeddedResource Update="Views\MedicinePage.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="PersonalCare.xaml">
+        <EmbeddedResource Update="Views\PersonalCarePage.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="Properties\Resources.resx">
@@ -63,11 +76,14 @@
         <EmbeddedResource Update="StartPage.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="Test.xaml">
-          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
         <EmbeddedResource Update="TodoList.xaml">
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Views\Scheduler.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Views\SelectPatientPage.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
     </ItemGroup>
 </Project>

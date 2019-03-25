@@ -15,9 +15,13 @@ namespace HMIS
             
 public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzUzOTRAMzEzNjJlMzQyZTMwbHFjZ0pMaFU0OENwcUp6N3lBVXVRSFM3cFIza3BsYW5ZcEhVTDdldlBqaz0=");
             // The root page of your application
-            MainPage = new NavigationPage(new StartPage());
-            //SqlConnection connection = new SqlConnection("Data Source = hmisserver.database.windows.net; Initial Catalog = hmisDB; Persist Security Info = True; User ID = shiofrakeogh; Password = ***********");
+            MainPage = new NavigationPage(new StartPage())
+            {
+                BarBackgroundColor = Color.FromHex("#87CEFA"),
+                BarTextColor = Color.White,
+            };
 
         }
 

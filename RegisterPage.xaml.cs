@@ -20,7 +20,7 @@ namespace HMIS.Views
             this.BindingContext = new RegisterViewModel();
         }
 
-        void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+        /*void OnPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             var carerLabel = new Label();
             var picker = (Picker)sender;
@@ -30,11 +30,11 @@ namespace HMIS.Views
             {
                 carerLabel.Text = (string)picker.ItemsSource[selectedIndex];
             }
-        }
+        }*/
 
-        private void Button_Clicked(object sender, EventArgs e)
+       private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Home());
+            //Navigation.PushAsync(new Home());
         }
     }
 }
